@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
+import { TweetsModule } from './tweets/tweets.module';
 
 
 @Module({
@@ -17,6 +18,6 @@ import { UsersModule } from './users/users.module';
     password: process.env.DB_PASSWORD,      
     autoLoadEntities: true,
     synchronize: true
-  }), UsersModule],
+  }), UsersModule, TweetsModule],
 })
 export class AppModule {}
